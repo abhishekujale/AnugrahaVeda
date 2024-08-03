@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+}
+
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu button
+{
+    font-size: 20px;
+}
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  border: 1px white solid;
+  border-radius: 10px;
+}
+
+.menu-content a {
+  display: block;
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.menu-content a:hover {
+  background-color: #a69090;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+
+.menu-content a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background-color: #ffffff;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+.menu-content a:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+.translate
+{
+    position: absolute;
+    left: 90%;
+}
+.img-back
+{
+     /* background-color: #803D3B; */
+    /* margin: -6px; */
+    margin: -10px;
+    margin-right: -50px;
+     overflow-x: hidden;
+    margin-right: -10px;
+background-image: url(https://wallpapercave.com/wp/wp6845526.jpg);
+    /* width: 2120px; */
+    height:1080px;
+
+  margin-bottom:0;
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+/* 
+    /* Set background image to fixed 
+    background-attachment: fixed; */
+}
+ nav
+{
+       background-color: rgb(255, 255, 255);
+ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+}
+nav ul 
+{
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+}
+li{
+    list-style-type: none;
+    position: static;
+}
+details summary{
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    margin-left: 100px;
+    position: static;
+    color: rgb(0, 0, 0);
+padding: 10px ;
+text-decoration: none;
+font-size: 20px;
+}
+
+/* border: #1f873e solid 0.5px;
+border-radius: 10px; */
+
+li a:hover{
+    /* background-color: white; */
+    color: black;
+    text-decoration: underline;
+}
+nav ul li img{
+    /* margin-left: -100px; */
+    margin-top: -20px;
+    width: 80px;
+    border: white;
+    border-radius: 50%;    
+}
+ul li:nth-child(7){
+    flex-direction: row-reverse;
+    position: static;
+}
+details
+{
+    margin-left: 10px;
+}
+#text-container{
+    font-size: 50px;
+    color: aliceblue;
+    text-align: center;
+    justify-self: center;
+    position: absolute;
+    top: 40%;
+}
+#text-container
+{
+    position: absolute;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-left: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top: 10%;
+
+}
+.container{
+    display: flex;
+}
+#text-container p{
+    font-size :60px;
+}
+.container img 
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    flex-direction: row-reverse;
+    top: 25%;
+    left: 70%;
+}
+/* body{
+background-color: #481E14;
+} */
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Style the scrollbar track when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color of the thumb when hovered */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* Color of the scrollbar corner */
+}
+.menu button
+{
+    background-color: #ffffff;
+    margin-top: -13px;
+    padding-left: 100px;
+}
+ button
+{
+    cursor: pointer;
+}

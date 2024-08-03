@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Center</title>
+<style>
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Navigation Styles */
+  nav {
+    background-color: #333;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover {
+    color: #ffd700;
+  }
+
+  /* Main Content Styles */
+  main {
+    padding: 20px;
+  }
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* FAQ Styles */
+  .faq {
+    margin-bottom: 40px;
+  }
+  .faq h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .faq p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .faq p strong {
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Contact Form Styles */
+  .contact-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .contact-form h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .contact-form input[type="text"],
+  .contact-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .contact-form textarea {
+    height: 100px;
+  }
+  .contact-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .contact-form input[type="submit"]:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="http://127.0.0.1:5000/">Home</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <h1>Help Center</h1>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Q: How do I reset my password?</strong></p>
+      <p>A: You can reset your password by visiting the "Forgot Password" page and following the instructions.</p>
+      <p><strong>Q: How do I update my account information?</strong></p>
+      <p>A: You can update your account information by logging into your account and navigating to the "Profile" section.</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

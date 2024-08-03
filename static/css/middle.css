@@ -1,0 +1,105 @@
+   /* body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Added background color
+        }  */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background:linear-gradient(to bottom, #481E14, #7F27FF); */
+           background-color: #CDFADB;
+            margin-bottom: 10px;
+        }
+
+        .medicine {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .box1 {
+            width: 450px;
+            height: 150px;
+            padding: 20px;
+            background-color: #5466cc;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Added shadow */
+            transition: transform 0.5s ease;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box1:hover {
+            transform: scale(1.1);
+        }
+
+        .box1 h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 28px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: top 0.3s ease, color 0.3s ease;
+        }
+.box1:hover h3
+{
+    display: none;
+}
+        .box1 p {
+            color: #000; /* Changed paragraph text color to black */
+            font-size: 16px;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .box1:hover p {
+            opacity: 1;
+        }
+
+        .box1:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .box1:hover:before {
+            opacity: 1;
+        }
+
+        .box1:hover h3 {
+            top: 20px;
+            color: #000;
+        }
+
+footer
+{
+    margin-top: 30px;
+}

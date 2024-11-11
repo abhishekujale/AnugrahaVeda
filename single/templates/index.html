@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Drug and Procedure</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+     <nav class="class=navbar navbar-expand-lg">
+            <ul>
+                <li><img src="../static/images/logo.png" alt="logo"></li>
+                
+                <li><a href="http://127.0.0.1:5000/home" >HOME</a></li>
+               
+                <!--  <li><a href="http://localhost:8501/">ALOPATHIC PRED.</a></li>
+                 <li>  <a href="http://127.0.0.1:3000/" style="color:white">Single</a></summary> </li>
+                -->
+                <div class="menu" id="menu">
+                    <button onclick="toggleMenu()">ALOPATHIC</button>
+                    <div class="menu-content" id="menuContent">
+                  <a href="http://localhost:8501/" >ALOPAOHIC PRED.</a>
+                  <a href="http://127.0.0.1:3000/" >Single_symptom</a>
+                  </div>
+                </div>
+                
+               <div class="menu" id="menu">
+                    <button onclick="toggleMenu()" style="text-decoration: underline">AYURVEDIC</button>
+                    <div class="menu-content" id="menuContent">
+                        
+                  <a href="http://127.0.0.1:7000/" >Single_symptom</a>
+                  <a href="http://127.0.0.1:5000/" >Multiple_symptoms</a>
+                  </div>
+                </div>
+                <li><a href="http://127.0.0.1:5000/shlok">SHLOKAS</a></li>
+                <li><a href="http://127.0.0.1:5000/asan">ASANS</a></li>
+                <li><a href="http://127.0.0.1:5000/login">LOG IN</a></li>
+                
+               <!--<li><a href="/bed">Appointment</a></li>-->
+ <div class="translate">
+        <div id="google_translate_element"></div>
+  </div>
+            </ul>
+        </nav>
+    <div class="container">
+        <h1>Predict Drug and Description</h1>
+        <form method="POST">
+            <div class="input-row">
+                <label for="input_example">Enter  Disease:</label>
+                <input type="text" id="input_example" name="input_example" placeholder="Enter disease..." oninput="convertToLowercase(this)">
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        {% if predicted_drug %}
+        <div class="result">
+            <p>Drug :</p>
+            <p>{{ predicted_drug }}</p>
+        </div>
+        {% endif %}
+        {% if predicted_procedure %}
+        <div class="result">
+            <p>Description:</p>
+            <p>{{ predicted_procedure }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .input-row {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+            font-size: 16px;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+       
+ 
+        .menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu button
+{
+    font-size: 20px;
+}
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color:white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  border: 1px white solid;
+  border-radius: 10px;
+}
+
+.menu-content a {
+  display: block;
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.menu-content a:hover {
+  background-color: #a69090;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+
+.menu-content a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background-color: #ffffff;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+.menu-content a:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+
+.translate
+{
+    position: absolute;
+    left: 90%;
+}
+nav
+{
+       background-color: rgb(255, 255, 255);
+ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+}
+nav ul 
+{
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+}
+li{
+    list-style-type: none;
+    position: static;
+}
+details summary{
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    margin-left: 100px;
+    position: static;
+    color: rgb(0, 0, 0);
+padding: 10px ;
+text-decoration: none;
+font-size: 20px;
+}
+
+/* border: #1f873e solid 0.5px;
+border-radius: 10px; */
+
+li a:hover{
+    /* background-color: white; */
+    color: black;
+    text-decoration: underline;
+}
+nav ul li img{
+    /* margin-left: -100px; */
+    margin-top: -20px;
+    width: 80px;
+    border: white;
+    border-radius: 50%;    
+}
+ul li:nth-child(7){
+    flex-direction: row-reverse;
+    position: static;
+}
+
+.menu button
+{
+    background-color: #ffffff;
+    margin-top: -13px;
+    padding-left: 100px;
+    color:black;
+}
+ button
+{
+    cursor: pointer;
+}
+.menu-content a
+{
+    margin-top:5px;
+}
+.menu-content
+{
+    left:30px;
+}
+</style>
+<script>
+function convertToLowercase(input) {
+    input.value = input.value.toLowerCase();
+}
+</script>
+ <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: "en" },
+                'google_translate_element'
+            );
+        }
+    </script>
+</body>
+</html>
